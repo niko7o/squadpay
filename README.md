@@ -2,15 +2,15 @@
 
 Pay with your squad, check your group expenses and poke whoever owes you money
 
-## Frontend
+### Frontend
 
 - React Native
 
-## Backend
+### Backend
 
 - Node.js
 
-## Databases
+### Databases
 
 - MongoDB
 - Firebase realtime db
