@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "debug": "DEBUG=express* node app.js",
+    "dev": "set NODE_ENV=dev && nodemon app.js"
   },
   "keywords": [
     "squadpay"
@@ -14,7 +14,8 @@
   "author": "Nikolaas Verlee",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.8.3"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
