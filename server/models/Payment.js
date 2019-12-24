@@ -25,6 +25,6 @@ const PaymentSchema = new mongoose.Schema({
   timestamps: true
 });
 
-const Event = mongoose.model('Event', PaymentSchema);
+const Payment = mongoose.model('Payment', PaymentSchema);
 
-module.exports = Event;
+module.exports = Payment;
