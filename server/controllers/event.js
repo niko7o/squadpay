@@ -2,7 +2,7 @@ const Event = require('../models/Event');
 
 module.exports.createEvent = (req, res, next) => {
   const { name } = req.query;
-  const event = new Event({ name: name });
+  const event = new Event({ name });
 
   console.log(`event ${name} is being created`);
 

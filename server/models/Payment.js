@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const PaymentSchema = new mongoose.Schema({
-  from: {
+  fromUser: {
     type: ObjectId
   },
-  to: {
+  toUser: {
     type: ObjectId
   },
-  amount: {
+  amountPaid: {
     type: Number,
     required: 'Amount is required',
     min: 1
