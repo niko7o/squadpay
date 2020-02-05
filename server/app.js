@@ -17,7 +17,7 @@ app.listen(PORT, (error) => {
     if (error) {
       return console.log('Trouble starting the server:', error);
     }
-    console.log(`# Listening on PORT ${PORT}`)
+    console.log(`# SquadPay Server Listening on PORT ${PORT}`)
 });
 
 module.exports = app;
