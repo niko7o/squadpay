@@ -6,9 +6,7 @@ const EventSchema = new mongoose.Schema({
     required: 'Event name is required',
     unique: true
   }
-}, {
-  timestamps: true
-});
+}, { timestamps: true });
 
 const Event = mongoose.model('Event', EventSchema);
 
