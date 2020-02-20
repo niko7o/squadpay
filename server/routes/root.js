@@ -7,11 +7,4 @@ router.get('/', (request, response) => {
     });
 });
 
-router.get('/events', (req, res) => {
-    console.log('Events');
-    return res.status(200).json({
-        'events': '1'
-    })
-})
-
 module.exports = router;
