@@ -32,7 +32,7 @@ module.exports.createEvent = (req, res, next) => {
 };
 
 module.exports.editEvent = (req, res, next) => {
-  const { id } = req.query.id;
+  const { id } = req.params;
 
   Event.findById(id).then(event => {
     if (event) {
