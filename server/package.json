@@ -7,7 +7,7 @@
     "start": "node app.js",
     "build": "yarn install && node app.js",
     "debug": "DEBUG=express* node app.js",
-    "dev": "set NODE_ENV=dev && nodemon app.js"
+    "dev": "nodemon app.js"
   },
   "keywords": [
     "squadpay"
