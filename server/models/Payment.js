@@ -3,23 +3,28 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const PaymentSchema = new mongoose.Schema({
   fromUser: {
-    type: ObjectId
+    type: ObjectId,
+    required: 'User with session is required'
   },
   toUser: {
     type: ObjectId
+  },
+  event: {
+    type: ObjectId,
+    required: 'Specify an event for these payments'
   },
   amountPaid: {
     type: Number,
     required: 'Amount is required',
     min: 1
   },
+  isPaid: {
+    type: Boolean,
+    default: false
+  },
   date: {
     type: Date,
     default: Date.now
-  },
-  paid: {
-    type: Boolean,
-    default: false
   },
 }, { timestamps: true });
 

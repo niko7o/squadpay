@@ -39,7 +39,7 @@ module.exports.editEvent = (req, res, next) => {
       Object.assign(event, req.body);
       event.save().then(() => {
         res.json({
-          'data': 'event edited'
+          'data': `event ${event.name} edited`
         })
       }).catch(error => {
         console.log(error);
