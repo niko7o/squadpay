@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 const Event = require('../models/Event');
 
 module.exports.getAllEvents = (req, res, next) => {
@@ -6,22 +8,46 @@ module.exports.getAllEvents = (req, res, next) => {
   })).catch(error => {
     console.error(error);
     next(error);
-});
+  });
 };
 
 module.exports.createEvent = (req, res, next) => {
-  const { name } = req.query;
-  const event = new Event({ name });
+  const eventName = req.body.name;
+  const newEvent = new Event({ 
+    name: eventName
+  });
 
-  console.log(`event ${name} is being created`);
-
-  event.save()
-    .then(() => {
-        res.json({
-          'data': 'Event created!'
-        });
-    }).catch(error => {
-        console.error(error);
-        next(error);
+  newEvent.save().then(() => {
+    res.json({
+      'data': `event ${eventName} created`
     });
+  }).catch(error => {
+    if (error instanceof mongoose.Error.ValidationError) {
+      res.json({
+        'error': error.errors
+      })
+    }
+    next(error);
+  });
+};
+
+module.exports.editEvent = (req, res, next) => {
+  const { id } = req.query.id;
+
+  Event.findById(id).then(event => {
+    if (event) {
+      Object.assign(event, req.body);
+      event.save().then(() => {
+        res.json({
+          'data': 'event edited'
+        })
+      }).catch(error => {
+        console.log(error);
+        next(error);
+      });
+    }
+  }).catch(error => {
+    console.log(error);
+    next(error);
+  });
 };
