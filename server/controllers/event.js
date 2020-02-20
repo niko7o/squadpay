@@ -1,5 +1,14 @@
 const Event = require('../models/Event');
 
+module.exports.getAllEvents = (req, res, next) => {
+  Event.find({}).then(events => res.json({
+    events
+  })).catch(error => {
+    console.error(error);
+    next(error);
+});
+};
+
 module.exports.createEvent = (req, res, next) => {
   const { name } = req.query;
   const event = new Event({ name });
@@ -15,4 +24,4 @@ module.exports.createEvent = (req, res, next) => {
         console.error(error);
         next(error);
     });
-}
+};
