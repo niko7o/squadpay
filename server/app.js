@@ -6,13 +6,13 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-
 const rootRoutes = require('./routes/root');
 const eventRoutes = require('./routes/event');
 
 require('./configs/database');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use('/', rootRoutes);
 app.use('/events', eventRoutes);

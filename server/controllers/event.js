@@ -51,3 +51,19 @@ module.exports.editEvent = (req, res, next) => {
     next(error);
   });
 };
+
+module.exports.deleteEvent = (req, res, next) => {
+  const eventId = req.params.id;
+
+  Event.findByIdAndRemove(eventId).then(() => {
+    res.json({
+      'data': `event ${eventId} removed`
+    });
+  }).catch(error => {
+    console.log(error);
+    res.json({
+      'error': 'There was a problem removing this event'
+    });
+    next(error);
+  });
+};
