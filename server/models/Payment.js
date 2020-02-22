@@ -1,16 +1,23 @@
 const mongoose = require('mongoose');
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
+const Event = require('./Event');
+const User = require('./User');
+
 const PaymentSchema = new mongoose.Schema({
   fromUser: {
     type: ObjectId,
-    required: 'User with session is required'
+    ref: User,
+    required: 'Originating user required'
   },
   toUser: {
-    type: ObjectId
+    type: ObjectId,
+    ref: User,
+    required: 'Destination user required'
   },
   event: {
     type: ObjectId,
+    ref: Event,
     required: 'Specify an event for these payments'
   },
   amountPaid: {
