@@ -13,6 +13,7 @@ module.exports = {
         "ecmaVersion": 2018
     },
     "rules": {
-        "quotes": ["warn", "single"]
+        "quotes": ["warn", "single"],
+        "no-undef": off
     }
 };
