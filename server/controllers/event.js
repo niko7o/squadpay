@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const Event = require('../models/Event');
 
 module.exports.getAllEvents = (req, res, next) => {
