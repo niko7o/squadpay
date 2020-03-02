@@ -4,19 +4,13 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  StatusBar,
-} from 'react-native';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 import Onboarding from './components/Onboarding';
 
-const App: () => React$Node = () => {
+const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />

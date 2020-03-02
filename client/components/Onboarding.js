@@ -1,35 +1,46 @@
 import React from 'react';
 
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+
+import { Button } from './Button';
 
 const Onboarding = () => (
   <View style={styles.onboarding}>
-    <Text style={styles.onboardingTitle}>squadpay</Text>
-    <TouchableOpacity style={styles.onboardingButton}>
-      <Text>Understood</Text>
-    </TouchableOpacity>
+    <View style={styles.logo}>
+      <Text style={styles.onboardingTitle}>squadpay</Text>
+    </View>
+    <View style={styles.body}>
+      <Button text="Sign up" />
+      <Button text="Login" />
+    </View>
   </View>
 );
 
 const styles = StyleSheet.create({
   onboarding: {
     display: 'flex',
-    justifyContent: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     alignItems: 'center',
     height: '100%',
   },
+  logo: {
+    width: '100%',
+    height: 64,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   onboardingTitle: {
-    fontSize: 40,
+    fontSize: 32,
   },
-  onboardingButton: {
-    backgroundColor: 'orange',
-    paddingHorizontal: 20,
-    paddingVertical: 20,
-    borderRadius: 8,
-    marginTop: 16,
-  },
-  onboardingButtonText: {
-    fontSize: 20,
+  body: {
+    width: '100%',
+    height: '20%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
   },
 });
 
