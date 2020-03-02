@@ -2,17 +2,18 @@ import React from 'react';
 
 import { View, Text, StyleSheet } from 'react-native';
 
-import { Button } from './Button';
+import { NeuView } from 'neumorphism-ui';
+
+import Button from './Button';
 
 const Onboarding = () => (
   <View style={styles.onboarding}>
     <View style={styles.logo}>
       <Text style={styles.onboardingTitle}>squadpay</Text>
     </View>
-    <View style={styles.body}>
-      <Button text="Sign up" />
-      <Button text="Login" />
-    </View>
+    <NeuView>
+      <Button type="rectangle" />
+    </NeuView>
   </View>
 );
 
@@ -22,6 +23,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
+    width: '100%',
     height: '100%',
   },
   logo: {
@@ -33,14 +35,6 @@ const styles = StyleSheet.create({
   },
   onboardingTitle: {
     fontSize: 32,
-  },
-  body: {
-    width: '100%',
-    height: '20%',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
   },
 });
 
